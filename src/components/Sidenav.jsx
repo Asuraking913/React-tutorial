@@ -16,6 +16,19 @@ const Sidenav = () => {
     setNav(!nav);
   };
 
+  const infoIcon = {
+    info: "home",
+    icon: <AiOutlineHome />,
+    info1: "work",
+    icon1: <GrProjects />,
+    info2: "projects",
+    icon2: <AiOutlineProject />,
+    info3: "resume",
+    icon3: <BsPerson />,
+    info4: "contact",
+    icon4: <AiOutlineMail />,
+  };
+
   return (
     <div className=" p-4  flex flex-row justify-end absolute bg-blue-500 w-full">
       <AiOutlineMenu
@@ -25,11 +38,11 @@ const Sidenav = () => {
 
       {nav ? (
         <div className="flex flex-col gap-5 h-screen w-full bg-white  fixed top-0 left-0 justify-center items-center">
-          <LinkTag info={"home"} icon={<AiOutlineHome />} />
-          <LinkTag info={"Work"} icon={<GrProjects />} />
-          <LinkTag info={"Projects"} icon={<AiOutlineProject />} />
-          <LinkTag info={"Resume"} icon={<BsPerson />} />
-          <LinkTag info={"Contact"} icon={<AiOutlineMail />} />
+          <LinkTag info={infoIcon.info} icon={infoIcon.icon} />
+          <LinkTag info={infoIcon.info1} icon={infoIcon.icon1} />
+          <LinkTag info={infoIcon.info2} icon={infoIcon.icon2} />
+          <LinkTag info={infoIcon.info3} icon={infoIcon.icon3} />
+          <LinkTag info={infoIcon.info4} icon={infoIcon.icon4} />
         </div>
       ) : (
         ""
