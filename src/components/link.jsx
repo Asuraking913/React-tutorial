@@ -1,18 +1,14 @@
-import { AiOutlineHome } from "react-icons/ai";
-
-export default function LinkTag(icon, info) {
+export default function LinkTag(props) {
   return (
-    <div className="flex w-full justify-center items-center">
+    <div className="w-[80%] flex items-center justify-center ">
       <a
-        href="#"
-        className=" flex items-center justify-center shadow-lg shadow-gray-400 hover:scale-110 ease-in-out duration-200 rounded-full gap-4 bg-gray-300 w-4/5 h-[75px]"
+        href=""
+        className="flex rounded-full hover:scale-110 duration-200 ease-in shadow-lg shadow-gray-500 gap-4 h-[75px] items-center justify-center text-2xl capitalize bg-gray-300 w-full"
       >
-        {icon}
+        <p className="capitalize text-3xl">{props.icon}</p>
 
-        <p className="text-2xl font-sans font-bold">{info}</p>
+        <p className="font-bold">{props.info}</p>
       </a>
     </div>
   );
 }
-
-//<AiOutlineHome className="text-3xl" />;

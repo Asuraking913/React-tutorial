@@ -22,7 +22,7 @@ const Sidenav = () => {
 
       {nav ? (
         <div className="flex h-screen w-full bg-white  fixed top-0 left-0 justify-center items-center">
-          <LinkTag icon={AiOutlineHome} info={"Home"} />
+          <LinkTag info={"home"} icon={<AiOutlineHome />} />
         </div>
       ) : (
         ""
