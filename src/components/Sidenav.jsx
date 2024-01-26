@@ -16,6 +16,11 @@ const Sidenav = () => {
     setNav(!nav);
   };
 
+  const infoIcon2 = {
+    info: "projects",
+    icon: <AiOutlineProject />,
+  };
+
   const infoIcon = {
     info: "home",
     icon: <AiOutlineHome />,
@@ -39,7 +44,7 @@ const Sidenav = () => {
       {nav ? (
         <div className="flex flex-col gap-5 h-screen w-full bg-white  fixed top-0 left-0 justify-center items-center">
           <LinkTag info={infoIcon.info} icon={infoIcon.icon} />
-          <LinkTag info={infoIcon.info1} icon={infoIcon.icon1} />
+          <LinkTag {...infoIcon2} />
           <LinkTag info={infoIcon.info2} icon={infoIcon.icon2} />
           <LinkTag info={infoIcon.info3} icon={infoIcon.icon3} />
           <LinkTag info={infoIcon.info4} icon={infoIcon.icon4} />
