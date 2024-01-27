@@ -8,9 +8,7 @@ import React, { useState } from "react";
 // import { BsPerson } from "react-icons/bs";
 // import { GrProjects } from "react-icons/gr";
 // import LinkTag from "./link";
-import testTag from "./link";
-
-// import { AiOutlineHome, AiOutlineMenu } from "react-icons/ai";
+import TestTag from "./link";
 
 function Sidenav() {
   const jokes = [
@@ -35,19 +33,26 @@ function Sidenav() {
       joke: "sdffwpwpepjwer",
       author: "Ling Luochen",
     },
+    {
+      joke: "sdffwpwpepjwer",
+      author: "Ling Luoche444",
+    },
+    {
+      joke: "sdffwpwpepjwer",
+      author: "Ling Luoche444",
+    },
   ];
 
-  const jokeList = [
-    <testTag joke={jokes[0].joke} author={jokes[0].author} />,
-    <testTag joke={jokes[1].joke} author={jokes[1].author} />,
-    <testTag joke={jokes[2].joke} author={jokes[2].author} />,
-  ];
+  const jokeList = [];
+
+  for (var i = 0; i < jokes.length; i++) {
+    jokeList.push(<TestTag joke={jokes[i].joke} author={jokes[i].author} />);
+  }
 
   return (
-    <div>
-      <p>{jokeList}</p>
-      <p>
-        <testTag joke={jokes[0].joke} author={jokes[0].author} />
+    <div className="flex items-center h-screen justify-center">
+      <p className="flex flex-col gap-4 w-[70%] items-center text-center bg-blue-600 rounded-full">
+        {jokeList}
       </p>
     </div>
   );
