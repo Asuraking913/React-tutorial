@@ -41,6 +41,10 @@ function Sidenav() {
       joke: "sdffwpwpepjwer",
       author: "Ling Luoche444",
     },
+    {
+      joke: "sdffwpwpepjwer",
+      author: "Ling Luoche444",
+    },
   ];
 
   const jokeList = [];
