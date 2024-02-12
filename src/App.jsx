@@ -1,16 +1,12 @@
 import Form from "./form";
 
 function App() {
-  function handleSumbit() {
-    console.log("Form Sumbitted");
-  }
-
   function handleClick() {
     console.log("Button clicked");
   }
 
-  function handleChange(e) {
-    console.log(e.target.value);
+  function handleSumbit() {
+    console.log("Form submitted");
   }
 
   return (
@@ -21,7 +17,7 @@ function App() {
       >
         Do something!!
       </button>
-      <Form />
+      <Form onSubmit={handleSumbit} />
     </div>
   );
 }
