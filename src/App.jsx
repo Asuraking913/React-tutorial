@@ -1,12 +1,27 @@
-import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-import Sidenav from "./components/Sidenav";
+import Form from "./form";
 
 function App() {
+  function handleSumbit() {
+    console.log("Form Sumbitted");
+  }
+
+  function handleClick() {
+    console.log("Button clicked");
+  }
+
+  function handleChange(e) {
+    console.log(e.target.value);
+  }
+
   return (
-    <div>
-      <Sidenav />
+    <div className="flex items-center justify-center h-screen">
+      <button
+        className="hover:border-white hover:border-2"
+        onClick={handleClick}
+      >
+        Do something!!
+      </button>
+      <Form />
     </div>
   );
 }
