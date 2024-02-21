@@ -1,52 +1,50 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-function Quote({ quote, author, id }) {
-  function handleAddLike(e) {
-    e.preventDefault();
-    const newlikes = likes + 1;
-    addLike(newlikes);
-    console.log(`liked id: ${id}`);
-    console.log(`Total liked: ${newlikes}`);
+function Quote({ quotes, author, id, favorite, onFav }) {
+  const [likes, setLike] = useState(0);
+  const [dislikes, setDislike] = useState(0);
+
+  function handleLike() {
+    const newLikes = likes + 1;
+    setLike(newLikes);
+    console.log(`like ${id}: totalLikes: ${newLikes}`);
   }
 
-  function handleDislike(e) {
-    e.preventDefault();
-    const newDisLikes = disLikes + 1;
-    addDisLike(newDisLikes);
-    console.log(`Diskliked id  ${id}`);
-    console.log(`Total Diskliked: ${newDisLikes}`);
+  function handleDislike() {
+    setDislike(dislikes + 1);
+    console.log(`dislike ${id}: totalLikes: ${likes}`);
   }
 
-  const [likes, addLike] = useState(0);
-  const [disLikes, addDisLike] = useState(0);
+  function onFavourite() {
+    onFav(id);
+  }
 
   return (
-    <div className="flex justify-center items-center flex-col">
-      <p>{quote}</p>
+    <div className="text-center mb-4 flex flex-col justify-center">
+      <p>{quotes}</p>
       <p>{author}</p>
 
-      <p>
-        {`like: ${likes}`} {`Disklike: ${disLikes}`}
-      </p>
-
-      <div className="flex gap-6 text-2xl bg-gray-700">
-        <a
-          href=""
-          className="px-2 hover:border-gray-500 border-2 border-transparent
-        "
-          onClick={handleAddLike}
+      <p>{likes}</p>
+      <p>Favorite: {favorite ? "YES" : "NO"}</p>
+      <div className="">
+        <button
+          className="px-4 py-2 bg-gray-400 hover:border-purple-400 border-black border-2"
+          onClick={handleLike}
         >
           &times;
-        </a>
-        <a
-          href=""
-          className="px-2 hover:border-gray-500 border-2 border-transparent
-        "
+        </button>
+        <button
+          className="px-4 py-2 bg-gray-400 hover:border-purple-400 border-black border-2"
           onClick={handleDislike}
         >
           &copy;
-        </a>
+        </button>
+        <button
+          className="px-4 py-2 bg-gray-400 hover:border-purple-400 border-black border-2"
+          onClick={onFavourite}
+        >
+          favorite
+        </button>
       </div>
     </div>
   );

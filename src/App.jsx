@@ -1,43 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import Quote from "./quote";
 
 function App() {
-  const quotes = [
+  const [favorite, setFav] = useState(1);
+
+  const [quotes, setQuotes] = useState([
     {
-      quote: "The sun will shine on us again",
+      quotes: "You know no thing Jon snow",
+      author: "--Jon Snow",
+      id: 1,
+    },
+    {
+      quotes: "With great power comes great responsibility",
+      author: "--Andrew Garfield",
+      id: 2,
+    },
+    {
+      quotes: "The sun will rise on us again",
       author: "--Thor Odinson",
-      id: "1",
+      id: 3,
     },
-    {
-      quote: "Far away beneath the horizon, yet beneath the eyes",
-      author: "--Yan",
-      id: "2",
-    },
-    {
-      quote: "When the going gets tough, the tough gets going ",
-      author: "--Timon",
-      id: "3",
-    },
-  ];
+  ]);
+
+  function addJoke({ text, e }) {
+    e.preventDefault();
+    const newObj = {
+      quotes: text,
+      id: self.crypto.randomUUID(),
+    };
+
+    quotes.push(newObj);
+    console.log(quotes);
+    // console.log(text);
+  }
 
   const quotesList = [];
 
   for (var i = 0; i < quotes.length; i++) {
     quotesList.push(
       <Quote
-        quote={quotes[i].quote}
+        quotes={quotes[i].quotes}
         author={quotes[i].author}
         id={quotes[i].id}
+        favorite={favorite === quotes[i].id}
+        onFav={setFav}
       />
     );
   }
 
   return (
-    <div className="h-screen w-[100%]">
-      <div className="bg-gray-950 justify-center items-center h-screen flex flex-col gap-4">
-        <h1 className="text-4xl font-bold">Famous Quotes</h1>
-        {quotesList}
-      </div>
+    <div className="h-screen bg-black flex items-center justify-center flex-col">
+      <h1 className="font-bold capitalize text-3xl">Famous Quotes</h1>
+
+      <p>{quotesList}</p>
     </div>
   );
 }
