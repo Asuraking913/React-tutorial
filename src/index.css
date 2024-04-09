@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "baba";
+    src: url("../src/fonts/adbalumo/Rubik_Doodle_Shadow/RubikDoodleShadow-Regular.ttf");
+}
+
+.size {
+    font-size: 2.5em;
+}
+
+.bg-c {
+    background-color: rgb(137, 43, 226);
+}
+
+.color  {
+    background-color: white;
+}
+
+.colorText {
+    color: white;
+}
+
+.font1 {
+    font-family: "baba";
+}
