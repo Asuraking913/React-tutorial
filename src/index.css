@@ -4,25 +4,27 @@
 
 @font-face {
     font-family: "baba";
+    src: url("../src/fonts/adbalumo/Agbalumo/Agbalumo-Regular.ttf");
+}
+
+@font-face {
+    font-family: "doodle";
     src: url("../src/fonts/adbalumo/Rubik_Doodle_Shadow/RubikDoodleShadow-Regular.ttf");
 }
 
-.size {
-    font-size: 2.5em;
+@font-face {
+    font-family: "roboto";
+    src: url("../src/fonts/adbalumo/Roboto/Roboto-Regular.ttf");
 }
 
-.bg-c {
-    background-color: rgb(137, 43, 226);
+.font2 {
+    font-family: "doodle";
 }
 
-.color  {
-    background-color: white;
+.color {
+    background-color: rgb(170, 146, 101);
 }
 
-.colorText {
-    color: white;
-}
-
-.font1 {
-    font-family: "baba";
+.blur1 {
+    backdrop-filter: blur(10px);
 }
