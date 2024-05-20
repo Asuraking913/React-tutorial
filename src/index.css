@@ -28,3 +28,7 @@
 .blur1 {
     backdrop-filter: blur(10px);
 }
+
+.box {
+    text-shadow: 1px 2px 2px white;
+}
