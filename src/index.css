@@ -52,4 +52,6 @@
 
 .bgImg {
     background-image: url("./assets/cup.jpeg");
+    background-position: center;
+
 }

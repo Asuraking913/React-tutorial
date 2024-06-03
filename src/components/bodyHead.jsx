@@ -2,6 +2,14 @@ import React from 'react'
 import myImage from "./../assets/img7.png"
 import Expe from './experience'
 import myImage1 from "./../assets/cup.jpeg"
+import myImage2 from "./../assets/logo1.png"
+import myImage3 from "./../assets/logo2.png"
+import myImage4 from "./../assets/logo3.png"
+import myImage5 from "./../assets/logo5.png"
+import myImage6 from "./../assets/pigy.jpeg"
+import myImage7 from "./../assets/loan.jpeg"
+import myImage8 from "./../assets/auto.jpeg"
+import Serve from './service'
 
 function Body1() {
 
@@ -51,6 +59,32 @@ function Body1() {
 
     const expList = expItems.map(exp => (<Expe i={exp.icon} h4={exp.h4} p={exp.p}/>))
 
+    const serviceItems = [
+        {
+            img: <img src={myImage6} className='w-full h-[60%] object-cover rounded-tr-[1em] rounded-tl-[1em]' alt="" />,
+            h3: "Banking",
+            p: "Lorem ipsum dolor sit amet."
+        },
+        {
+            img: <img src={myImage7} className='w-full h-[60%] object-cover rounded-tr-[1em] rounded-tl-[1em]' alt="" />,
+            h3: "Loan",
+            p: "Lorem ipsum dolor sit amet."
+        }, 
+        {
+            img: <img src={myImage8} className='w-full h-[60%] object-cover rounded-tr-[1em] rounded-tl-[1em]' alt="" />,
+            h3: "Automation",
+            p: "Lorem ipsum dolor sit amet."
+        }, 
+        {
+            img: <img src={myImage8} className='w-full h-[60%] object-cover rounded-tr-[1em] rounded-tl-[1em]' alt="" />,
+            h3: "Automation",
+            p: "Lorem ipsum dolor sit amet."
+        }
+    ]
+
+
+    const serverList = serviceItems.map(serve => (<Serve img={serve.img} h3={serve.h3} p={serve.p}/>)) 
+
 
   return (
     <article>
@@ -93,21 +127,25 @@ function Body1() {
             </div>
             
         </section>
-        <section className='flex justify-center items-center flex-col h-[50vh] gap-[2em] pt-[2em] p-[1em]'>
-            <h2>Buisness Partners</h2>
+        <section className='flex justify-center items-center flex-col h-[50vh] gap-[2.5em]  p-[3rem]'>
+            <h2 className='font-[poppins] text-3xl font-bold'>Buisness Partners</h2>
             <div className='flex gap-[7em]'>
-                <div className='w-[200px] h-[200px] bg-pink-600'>
+                <div className='w-[200px] h-[200px]'>
+                    <img src={myImage2} alt="" />
                 </div>
-                <div className='w-[200px] h-[200px] bg-pink-600'>
+                <div className='w-[200px] h-[200px]'>
+                <img src={myImage3} alt="" />
                 </div>
-                <div className='w-[200px] h-[200px] bg-pink-600'>
+                <div className='w-[200px] h-[200px]'>
+                <img src={myImage4} alt="" />
                 </div>
-                <div className='w-[200px] h-[200px] bg-pink-600'>
+                <div className='w-[200px] h-[200px]'>
+                <img src={myImage5} alt="" />
                 </div>
             </div>
         </section>
         <section className='flex h-screen w-full items-center gap-[4em]'>
-            <div className='w-[500px] bg-cover bg-center h-[65%] flex bgImg justify-center items-center'></div>
+            <div className='w-[500px] bg-cover h-[65%] flex bgImg justify-center items-center'></div>
             <div className='w-[600px] p-[2em] flex flex-col gap-[1em]'>
                 <h2 className='text-2xl font-[poppins] font-bold'>IPDC AT A GLANCE</h2>
                 <p className='text-gray-600'>IPDC Finance Limited (previously known as "Industrial Promotion and Development company of Bangledesh Limited") is the first private sector financial institution of the country established in 1981 by  a distinguished group of shareholders namely International Finance Corporation (IFC), USA, German Investment and Development Company (DEG), Germany, The aga khan Fund for Economic Development (AKFED), Switerzerland, commonwealth Development Corporation (CDC), UK and the Government of Bangledash
@@ -115,10 +153,10 @@ function Body1() {
                 <a href="" className='text-pink-600 font-[poppins] font-semibold'>Read More <i className='fa-solid fa-arrow-right'></i></a>
             </div>
         </section>
-        <section>
+        <section className='p-[3rem] flex flex-col justify-center items-center gap-[1.5em]'>
             <h2 className='font-[poppins] text-3xl capitalize font-bold'>Our services</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, non! Lorem, ipsum dolor.</p>
-            <div></div>
+            <p className='text-gray-600'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, non! Lorem, ipsum dolor.</p>
+            <div className='flex h-[50%] w-[90%] gap-[2em] p-[1em]'>{serverList}</div>
         </section>
     </article>
   )
