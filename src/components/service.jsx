@@ -1,14 +1,17 @@
 import React from 'react'
 
 function Serve({img, h3, p}) {
+  
   return (
-    <div className='w-full rounded-[1.5em]'>
+      <div className='w-[80%] rounded-[1.5em]'>
         {img}
-        <div className='flex items-center justify-between'>
-            <h3 className='font-[poppins] text-xl font-semibold'>{h3}</h3>
-            <i className='fa-solid fa-circle-arrow-right text-pink-600'></i>
+        <div className='flex p-[5px] items-center justify-between'>
+          <div className='flex flex-col gap-[0.3em]'>
+              <h3 className='font-[poppins] uppercase text-xl font-semibold'>{h3}</h3>
+              <p className='font-[roboto] uppercase'>{p}</p>
+          </div>
+          <i className='fa-solid fa-arrow-right bg-pink-300 p-[5px] rounded-[50%] text-pink-600'></i>
         </div>
-        <p className='font-[roboto]'>{p}</p>
     </div>
   )
 }
